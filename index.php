@@ -1,9 +1,25 @@
+<?php 
+
+require_once(__DIR__ . "/model/config.php");
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>	GET REKT SCRUBERONIES </title>
 	<link rel="stylsheet" type="text/css" href="css/main.css">
 </head>
+<header>
+	<button type="button">
+		<a href="<?php echo $path . "register.php"?>">Register Scrub</a>
+	</button>
+	<button type="button">
+		<a href="<?php echo $path . "login.php"?>">Login M8 Scrub</a>
+	</button>
+	<button type="button">
+		<a href="<?php echo $path . "controller/logout-user.php"?>">Log Out and Good Riddance</a>
+	</button>
+</header>
 <body>
 <div class="wrap">
 	<div class="task-list">
