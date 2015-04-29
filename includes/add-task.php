@@ -1,12 +1,12 @@
 <?php
- 	$task = strip_tags($post['task']);
+ 	$task = strip_tags($_POST['task']);
  	$date = date('Y-m-d');
- 	$time = time('H:i:s');
+ 	$time = date('H:i:s');
  
 	include ('connect.php');
 
 	$mysqli = new mysqli('localhost', 'root', 'root', 'todo2');
-	$mysqli -> query("INSERT INTO tasks VALUES (', '$task', '$date', '$time')");
+	$mysqli -> query("INSERT INTO tasks VALUES ('', '$task', '$date', '$time')");
 
 	$query = "SELECT * FROM tasks WHERE task ='$task' and date = '$date' and time = '$time'";
  
@@ -20,6 +20,6 @@
 
 	$mysqli->close();
 
-	echo '<li><span>' . $task_name . '</span><img id="'.$task_id.'" class="delete-button" width="10px" src=images/close.svg" /></li>';
+	echo '<li><span>' . $task_name . '</span><img id="'.$task_id.'" class="delete-button" width="10px" src=images/close.svg"/></li>';
 
  ?>
